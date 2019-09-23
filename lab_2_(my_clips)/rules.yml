@@ -1,0 +1,11 @@
+rule name1:
+  if: (fact1 and fact2) or  (not fact3)
+  then:
+    question : some_question1
+    resultFact: resFact1
+
+rule name2:
+  if: (fact1 and fact2) or  (not fact3)
+  then:
+    question : some_question2
+    resultFact: resFact2
