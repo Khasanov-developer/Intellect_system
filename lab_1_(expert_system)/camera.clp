@@ -274,18 +274,7 @@
 	(not (choose ?))
 	=>
 	(assert (choose Fujifilm-FinePix-XP130)))
-	
-(defrule placeholder-rule
-	(declare (salience 1))
-	(cheap-and-not-film-camera)
-	(not (placeholder ?))
-	=>
-	(assert (placeholder yes)))
 
-	
-
-
-	
 
 
 ;;;********************************
@@ -293,14 +282,14 @@
 ;;;********************************
 
 (defrule system-banner ""
-  (declare (salience 25))
+  (declare (salience 35))
   =>
   (printout t crlf crlf)
   (printout t "A camera choice Expert System")
   (printout t crlf crlf))
 
 (defrule print-choose ""
-  (declare (salience 25))
+  (declare (salience 35))
   (choose ?item)
   =>
   (printout t crlf crlf)
