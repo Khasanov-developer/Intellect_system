@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0798f4af-ad9a-4a88-b221-b9e3466b367e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fact.py" beforeDir="false" afterPath="$PROJECT_DIR$/fact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rule.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rules.yml" beforeDir="false" afterPath="$PROJECT_DIR$/rules.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rules_container.py" beforeDir="false" afterPath="$PROJECT_DIR$/rules_container.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/terminal.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +21,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="403">
               <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
@@ -66,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rules.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2869">
-              <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
+            <state relative-caret-position="304">
+              <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -106,8 +100,8 @@
         <option value="$PROJECT_DIR$/rules_container.py" />
         <option value="$PROJECT_DIR$/terminal.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/rules.yml" />
         <option value="$PROJECT_DIR$/rule.py" />
+        <option value="$PROJECT_DIR$/rules.yml" />
       </list>
     </option>
   </component>
@@ -232,12 +226,12 @@
       <workItem from="1569244932698" duration="3527000" />
       <workItem from="1569323863665" duration="4917000" />
       <workItem from="1569401322995" duration="2888000" />
-      <workItem from="1569422750809" duration="7954000" />
+      <workItem from="1569422750809" duration="8294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28973000" />
+    <option name="totallyTimeSpent" value="29313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="325" y="0" width="1282" height="867" extended-state="0" />
@@ -347,13 +341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rules.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2869">
-          <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -366,8 +353,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="403">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rules.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
         </state>
       </provider>
     </entry>
