@@ -1,5 +1,4 @@
 
-
 class Fact:
     def __init__(self, ifPart, thenPart):
         self.ifPart = ifPart

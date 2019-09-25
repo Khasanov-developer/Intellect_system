@@ -1,4 +1,3 @@
-
 ;;;======================================================
 ;;;   Automotive Expert System
 ;;;
@@ -225,16 +224,9 @@
 	=>
 	(assert (cheap-and-not-film-camera-with-nonchangeable-lens)))
 	
-(defrule for-vacation
-	(declare (salience 8))
-	(cheap-and-not-film-camera-with-nonchangeable-lens)
-	(not (is-for-vacation ?))
-	(not (choose ?))
-	=>
-	(assert (is-for-vacation (yes-or-no-p "Do you need a camera for a vacation (yes/no)?"))))
 	
 (defrule type-of-vacation-is
-	(declare (salience 7))
+	(declare (salience 8))
 	(is-for-vacation yes)
 	(cheap-and-not-film-camera-with-nonchangeable-lens)
 	(not (type-of-vacation ?))
@@ -244,7 +236,7 @@
 							   swimming hiking))))
 	
 (defrule cheap-and-not-film-camera-with-non-changeable-lens-for-vacation
-	(declare (salience 6))
+	(declare (salience 7))
 	(cheap-and-not-film-camera-with-nonchangeable-lens)
 	(is-for-vacation yes)
 	(not (choose ?))
@@ -252,7 +244,7 @@
 	(assert (cheap-and-not-film-camera-with-nonchangeable-lens-for-vacation)))
 	
 (defrule choose-Canon-PowerShot-G9-X-Mark
-	(declare (salience 5))
+	(declare (salience 6))
 	(cheap-and-not-film-camera-with-nonchangeable-lens)
 	(is-for-vacation no)
 	(not (choose ?))
@@ -260,7 +252,7 @@
 	(assert (choose Canon-PowerShot-G9-X-Mark)))
 						
 (defrule choose-Nikon-Coolpix-B500
-	(declare (salience 4))
+	(declare (salience 5))
 	(cheap-and-not-film-camera-with-nonchangeable-lens-for-vacation)
 	(type-of-vacation hiking)
 	(not (choose ?))
@@ -268,7 +260,7 @@
 	(assert (choose Nikon-Coolpix-B500)))
 	
 (defrule choose-Fujifilm-FinePix-XP130
-	(declare (salience 3))
+	(declare (salience 4))
 	(cheap-and-not-film-camera-with-nonchangeable-lens-for-vacation)
 	(type-of-vacation swimming)
 	(not (choose ?))
@@ -296,4 +288,3 @@
   (printout t "Suggested choose:")
   (printout t crlf crlf)
   (format t " %s%n%n%n" ?item))
-
