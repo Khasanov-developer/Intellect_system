@@ -6,7 +6,7 @@ class Rule:
         self.__rulePriority = self.__get_priority(ruleBody)
         self.__ruleCondition = self.__get_condition(ruleBody)
         self.__ruleQuestion = self.__get_question(ruleBody)
-        self.__ruleResult = self.__get_result(ruleBody)
+        self.__ruleResult = self.__get_result(ruleBody).strip()
 
     def get_rule_priority(self):
         return self.__rulePriority
@@ -22,7 +22,7 @@ class Rule:
 
     def __get_priority(self, ruleBody):
         if 'priority' in ruleBody:
-            return ruleBody['priority']
+            return int(ruleBody['priority'])
         else:
             return 0
 
@@ -33,7 +33,7 @@ class Rule:
         return ruleBody['then']['resultFact']
 
     def __get_question(self, ruleBody):
-        if 'question' in ruleBody:
+        if 'question' in ruleBody['then']:
             return ruleBody['then']['question']
         else:
             return None
@@ -135,13 +135,15 @@ class Rule:
                 # print(factsList[int(output[index])])
                 output[index] = factsList[int(output[index])]
         #print(output)
+        output = [i.strip('<') for i in output]
         return output
 
 
     def process_rule(self, inMemoryFacts):
         pnList = self.__get_polish_notation(self.__ruleCondition)
         if self.__eval_pn(pnList, inMemoryFacts):
-            pass
+            #print(self.__ruleResult)
+            return self.__ruleResult
 
     def __eval_pn(self, polishNotationList, inMemoryFacts):
         pnList = polishNotationList.copy()
@@ -150,6 +152,7 @@ class Rule:
         while i < len(pnList):
             if pnList[i] not in ('and', 'not', 'or'):
                 i += 1
+
                 continue
             elif pnList[i] == 'and':
                 if (pnList[i - 2] == True or pnList[i - 2] == False) and type(pnList[i - 1]) is str:
@@ -158,10 +161,12 @@ class Rule:
                     if oper == True and fact in facts:
                         pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                     else:
                         pnList = pnList[:i - 2] + [False, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                 elif (pnList[i - 1] == True or pnList[i - 1] == False) and type(pnList[i - 2]) is str:
                     oper = pnList[i - 1]
@@ -169,22 +174,27 @@ class Rule:
                     if oper == True and fact in facts:
                         pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                     else:
                         pnList = pnList[:i - 2] + [False, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                 elif pnList[i - 1] == True and pnList[i - 2] == True:
                     pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                     i -= 1
+
                     continue
-                elif pnList[i - 2] and pnList[i - 1] in facts:
+                elif pnList[i - 2] in facts and pnList[i - 1] in facts:
                     pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                     i -= 1
+
                     continue
                 else:
                     pnList = pnList[:i - 2] + [False, ] + pnList[i + 1:]
                     i -= 1
+
                     continue
 
             elif pnList[i] == 'or':
@@ -194,10 +204,12 @@ class Rule:
                     if oper == True or fact in facts:
                         pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                     else:
                         pnList = pnList[:i - 2] + [False, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                 elif pnList[i - 1] == True or pnList[i - 1] == False:
                     oper = pnList[i - 1]
@@ -205,35 +217,44 @@ class Rule:
                     if oper == True or fact in facts:
                         pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
                     else:
                         pnList = pnList[:i - 2] + [False, ] + pnList[i + 1:]
                         i -= 1
+
                         continue
-                elif pnList[i - 1] or pnList[i - 2] in facts:
+                elif pnList[i - 1] in facts or pnList[i - 2] in facts:
                     pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                     i -= 1
                     continue
                 elif pnList[i - 1] == True or pnList[i - 2] == True:
                     pnList = pnList[:i - 2] + [True, ] + pnList[i + 1:]
                     i -= 1
+
                     continue
                 else:
                     pnList = pnList[:i - 2] + [False, ] + pnList[i + 1:]
                     i -= 1
+
                     continue
 
             elif pnList[i] == 'not':
                 if pnList[i - 1] == True:
                     pnList = pnList[:i - 1] + [False, ] + pnList[i + 1:]
+
                     continue
                 elif pnList[i - 1] == False:
                     pnList = pnList[:i - 1] + [True, ] + pnList[i + 1:]
+
                     continue
                 elif pnList[i - 1] not in facts:
                     pnList = pnList[:i - 1] + [True, ] + pnList[i + 1:]
+
                     continue
                 else:
                     pnList = pnList[:i - 1] + [False, ] + pnList[i + 1:]
+
                     continue
+        print(pnList[0])
         return pnList[0]
