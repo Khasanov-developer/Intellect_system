@@ -1,3 +1,4 @@
+import re
 
 class Rule:
     def __init__(self, ruleName, ruleBody):
@@ -37,8 +38,105 @@ class Rule:
         else:
             return None
 
-    def __get_polish_notation(self, ruleCondition):
-        pass
+    def __get_polish_notation(self, test_str):
+
+        factsList = re.findall(r'<.*?<', test_str)
+
+        output_str = test_str
+        for index, fact in enumerate(factsList):
+            output_str = re.sub(fact, str(index), output_str)
+
+        output_str = re.sub(r'or', '+', output_str)
+        output_str = re.sub(r'and', '*', output_str)
+        output_str = re.sub(r'not', '-', output_str)
+
+        rez = ''
+        for char in output_str:
+            if char != ' ':
+                rez += char
+        output_str = rez
+
+        openBrkList = []
+        closeBrkList = []
+
+        output = ''
+        bufStack = 'z'
+
+        index = 0
+        while index < len(output_str):
+            # print('char: ', output_str[index])
+            # print('output: ', output)
+            # print('stack: ', bufStack)
+            # print()
+
+            if (output_str[index] == '('):
+                bufStack += output_str[index]
+                index += 1
+                continue
+
+            if (output_str[index] == '-'):
+                bufStack += output_str[index]
+                index += 1
+                continue
+
+            if (output_str[index] < '0' or output_str[index] > '9') and len(output) > 0:
+                output += ','
+            else:
+                output += output_str[index]
+                index += 1
+                continue
+
+            if (output_str[index] == '*'):
+                if (bufStack[-1] == '*' or bufStack[-1] == '-'):
+                    output += bufStack[-1]
+                    bufStack = bufStack[0:len(bufStack) - 1]
+                else:
+                    bufStack += output_str[index]
+                    index += 1
+                continue
+
+            if (output_str[index] == '+'):
+                if (bufStack[-1] == '+' or bufStack[-1] == '*' or bufStack[-1] == '-'):
+                    output += bufStack[-1]
+                    bufStack = bufStack[0:len(bufStack) - 1]
+                else:
+                    bufStack += output_str[index]
+                    index += 1
+                continue
+
+            if (output_str[index] == ')'):
+                if bufStack[-1] == '(':
+                    index += 1
+                else:
+                    output += bufStack[-1]
+                bufStack = bufStack[0:len(bufStack) - 1]
+                continue
+
+        for i in range(len(bufStack) - 1, 0, -1):
+            if bufStack[i] == '+' or bufStack[i] == '*' or bufStack[i] == '-':
+                output += ',' + bufStack[i]
+
+        output = output.split(',')
+
+        while ("" in output):
+            output.remove("")
+
+        for index in range(len(output)):
+            if output[index] == '+':
+                output[index] = 'or'
+                continue
+            elif output[index] == '*':
+                output[index] = 'and'
+                continue
+            elif output[index] == '-':
+                output[index] = 'not'
+                continue
+            else:
+                # print(factsList[int(output[index])])
+                output[index] = factsList[int(output[index])]
+        #print(output)
+        return output
+
 
     def process_rule(self, inMemoryFacts):
         pnList = self.__get_polish_notation(self.__ruleCondition)
