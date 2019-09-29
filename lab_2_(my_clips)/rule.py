@@ -256,5 +256,4 @@ class Rule:
                     pnList = pnList[:i - 1] + [False, ] + pnList[i + 1:]
 
                     continue
-        print(pnList[0])
         return pnList[0]
