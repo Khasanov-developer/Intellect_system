@@ -39,7 +39,7 @@ rule expensive-and-not-film-camera:
 
 rule is-reflex-camera:
   priority: 24
-  if: (<expensive-and-not-film-camera< or <is-interchangeable-lens yes<) and (not <is-reflex-camera _<) and (not <choose _<)
+  if: (<expensive-and-not-film-camera< or <cheap-and-not-film-camera-with-interchangeable-lens<) and (not <is-reflex-camera _<) and (not <choose _<)
   then:
     question: Do you need a reflex camera (yes/no)?
     resultFact: is-reflex-camera

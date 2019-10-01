@@ -18,10 +18,11 @@ def reverse_logic_output(choice, rules):
     return facts
 
 def recurse_choice(choice, outputLst, rules):
-    if 'not' in choice or '_' in choice:
+    if '_' in choice:
         return choice
     else:
         lst = get_facts(choice, rules)
+        outputLst.extend(lst)
         for fact in lst:
             outputLst.append(recurse_choice(fact, outputLst, rules))
 
@@ -30,7 +31,20 @@ if __name__ == '__main__':
     path = 'rules.yml'
     rules = RulesContainer(path).rules
     output = []
-    choice = input()
+    choice = input('Input rule result: ')
     recurse_choice(choice, output, rules)
-    output = list(set(output))
-    print(output)
+    for rem in range(output.count(None)):
+        output.remove(None)
+
+    i = 0
+    while i < len(output):
+        if '_' in output[i]:
+            output.pop(i)
+        else:
+            i += 1
+
+    output = set(output)
+
+    print('Факты:')
+    for fact in output:
+        print(fact)
