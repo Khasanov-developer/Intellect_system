@@ -1,0 +1,62 @@
+{
+"Edge_1" : ["Set", "Цифровая камера", "Set", "фотоаппарат", "AKO"],
+"Edge_2" : ["Set", "пленочная камера", "Set", "фотоаппарат", "AKO"],
+"Edge_4" : ["Set", "пленочная сменный объектив", "Set", "пленочная камера", "AKO"],
+"Edge_5" : ["Set", "пленочная Несменный объектив", "Set", "пленочная камера", "AKO"],
+
+"Edge_6" : ["Item", "Hasselblad 202FA", "Set", "пленочная сменный объектив", "AKO"],
+"Edge_7" : ["Item", "Hasselblad 202FA", "Property", "Средний формат", "has property"],
+"Edge_8" : ["Item", "Hasselblad 202FA", "Price", "50,,200 тыс. руб.", "has price"],
+
+"Edge_9" : ["Item", "Зенит Е", "Set", "пленочная сменный объектив", "AKO"],
+"Edge_10" : ["Item", "Зенит Е", "Property", "Полнокадровая матрица", "has property"],
+"Edge_11" : ["Item", "Зенит Е", "Price", "0,5,,2 тыс.руб.", "has price"],
+
+"Edge_13" : ["Item", "SAMSUNG fino 800", "Set", "пленочная Несменный объектив", "AKO"],
+"Edge_14" : ["Item", "SAMSUNG fino 800", "Property", "Компактный корпус", "has property"],
+"Edge_15" : ["Item", "SAMSUNG fino 800", "Property", "Кроп матрица", "has property"],
+"Edge_16" : ["Item", "SAMSUNG fino 800", "Price", "0,5,,2 тыс.руб.", "has price"],
+
+"Edge_17" : ["Set", "Цифровая сменный объектив", "Set", "Цифровая камера", "AKO"],
+"Edge_18" : ["Set", "Цифровая Несменный объектив", "Set", "Цифровая камера", "AKO"],
+
+"Edge_19" : ["Item", "Canon 2000D", "Set", "цифровая сменный объектив", "AKO"],
+"Edge_20" : ["Item", "Canon 2000D", "Property", "Кроп матрица", "has property"],
+"Edge_21" : ["Item", "Canon 2000D", "Price", "20,,30 тыс. руб.", "has price"],
+
+"Edge_22" : ["Item", "Pentax 645Z", "Set", "цифровая сменный объектив", "AKO"],
+"Edge_23" : ["Item", "Pentax 645Z", "Property", "Средний формат", "has property"],
+"Edge_24" : ["Item", "Pentax 645Z", "Price", "200,,900 тыс. руб.", "has price"],
+
+"Edge_25" : ["Item", "Fujifilm GFX 50S", "Set", "цифровая сменный объектив", "AKO"],
+"Edge_26" : ["Item", "Fujifilm GFX 50S", "Property", "Средний формат", "has property"],
+"Edge_27" : ["Item", "Pentax 645Z", "Price", "200,,900 тыс. руб.", "has price"],
+
+"Edge_28" : ["Item", "Canon EOS 5D Mark IV", "Set", "цифровая сменный объектив", "AKO"],
+"Edge_29" : ["Item", "Canon EOS 5D Mark IV", "Property", "Полнокадровая матрица", "has property"],
+"Edge_30" : ["Item", "Canon EOS 5D Mark IV", "Price", "40,,200 тыс. руб.", "has price"],
+
+"Edge_31" : ["Item", "Nikon Z6", "Set", "цифровая сменный объектив", "AKO"],
+"Edge_32" : ["Item", "Nikon Z6", "Property", "Полнокадровая матрица", "has property"],
+"Edge_33" : ["Item", "Nikon Z6", "Price", "40,,200 тыс. руб.", "has price"],
+
+"Edge_34" : ["Item", "Fujifilm X-A20", "Set", "цифровая сменный объектив", "AKO"],
+"Edge_35" : ["Item", "Fujifilm X-A20", "Property", "Компактный корпус", "has property"],
+"Edge_36" : ["Item", "Fujifilm X-A20", "Property", "Кроп матрица", "has property"],
+"Edge_37" : ["Item", "Fujifilm X-A20", "Price", "20,,30 тыс. руб.", "has price"],
+
+"Edge_38" : ["Item", "Canon PowerShot G9 X Mark II", "Set", "цифровая Несменный объектив", "AKO"],
+"Edge_39" : ["Item", "Canon PowerShot G9 X Mark II", "Property", "Компактный корпус", "has property"],
+"Edge_40" : ["Item", "Canon PowerShot G9 X Mark II", "Property", "Кроп матрица", "has property"],
+"Edge_41" : ["Item", "Canon PowerShot G9 X Mark II", "Price", "20,,40 тыс. руб.", "has price"],
+
+"Edge_42" : ["Item", "Fujifilm FinePix XP130", "Set", "цифровая Несменный объектив", "AKO"],
+"Edge_43" : ["Item", "Fujifilm FinePix XP130", "Property", "Компактный корпус", "has property"],
+"Edge_44" : ["Item", "Fujifilm FinePix XP130", "Property", "Влагозащита", "has property"],
+"Edge_45" : ["Item", "Fujifilm FinePix XP130", "Property", "Кроп матрица", "has property"],
+"Edge_46" : ["Item", "Fujifilm FinePix XP130", "Price", "10,,30 тыс. руб.", "has price"],
+
+"Edge_47" : ["Item", "Nikon Coolpix B500", "Set", "цифровая Несменный объектив", "AKO"],
+"Edge_48" : ["Item", "Nikon Coolpix B500", "Property", "Кроп матрица", "has property"],
+"Edge_49" : ["Item", "Nikon Coolpix B500", "Price", "20,,40 тыс. руб.", "has price"]
+}
